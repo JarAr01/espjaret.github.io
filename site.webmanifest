@@ -1,10 +1,10 @@
 {
-  "short_name": "PWA",
-  "name": "IOT en PWA",
-  "start_url": "/index.html",
+  "short_name": "IoT",
+  "name": "PWA Jaret Antonio Ramirez",
+  "start_url": "index.html",
   "display": "standalone",
-  "theme_color": "#00FFAB",
-  "background_color": "#ff6d00",
+  "theme_color": "#ffd194",
+  "background_color": "#ffd194",
   "icons": [
     {
       "src": "img/PWA.png",
