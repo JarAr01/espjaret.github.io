@@ -5,10 +5,15 @@
 <title>PWA Jaret Antonio Ramirez</title>
 <link rel="manifest" href="site.webmanifest">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<link rel="stylesheet" href="css/nav.css">
+<link rel="stylesheet" href="css/material-icons.css">
 <style>
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css");
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+button :hover{
+    background-color: white;
+  }
 </style>
 </head>
 <body>
@@ -17,14 +22,43 @@
     background: linear-gradient(to right, #ffd194, #70e1f5); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */">
         <div class="container">
          <a class="navbar-brand" style="font-family: 'Lobster', cursive;" href="index.html">PWA Jaret Antonio Ramirez</a>
+         <h3 style="font-family: 'Lobster', cursive;">Simulador</h3>
         </div>
       </nav>
-  
+      <br>
       <div class="container">
-<h1>Control de Microcontrolador ESP8266</h1>
-</div>
+      <center><h1>Simulador de Dispositivo IoT</h1></center>
+      <hr>
+      <br>
+    <center>
+        <a href="#"><button  type="button" style="width: 100%; background-color: #ffd194;" class="btn btn-block">Ver dispositivo simulado</button></a>
+        <br><br>
+        <a href="#"><button  type="button"  style="width: 100%; background-color: #ffd194;" class="btn btn-block">Ver historial</button></a>
+        <br><br>
+        <h2>Dispositivo:</h2>
+        <output id="dispositivo">Dispositivo x</output>
+        <br><br>
+        <label for="disabledRange" class="form-label">Entrada</label>
+        <input type="range" class="form-range" id="disabledRange" disabled>
+        <br><br>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <label class="form-check-label" for="flexCheckDefault">
+            Salida
+          </label>
+        </div>
+        <br><br>
+
+
+
+    </center>
+    </div>
+<footer>
+  <nav-inf></nav-inf>
+</footer>
 </body>
-<!--  Java Script  -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+<!--  Java Script -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 <script src="js/barraInferior.js" type="module"></script>
 </html>
+
