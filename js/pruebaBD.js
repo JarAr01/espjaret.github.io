@@ -1,4 +1,5 @@
-document.getElementById("btnPrueba").addEventListener("click",function{
+document.getElementById("btnPrueba").addEventListener("click", incersion());
+function incersion(){
  db.collection("cities").doc("LA").set({
     name: "Los Angeles",
     state: "CA",
@@ -9,5 +10,4 @@ document.getElementById("btnPrueba").addEventListener("click",function{
 })
 .catch((error) => {
     console.error("Error writing document: ", error);
-});                                                     
-});
+});                 
