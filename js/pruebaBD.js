@@ -1,7 +1,12 @@
 import {
   getFirestore
 } from "./firebase.js";
-const firestore = getFirestore();
+
+document.getElementbyId("btnPrueba").addEventListener("click", function{
+firebase.firestore().collection("Nueva").doc("dos").set({nombre: "Hola 2"})
+});
+
+/*const firestore = getFirestore();
 const db = firebase.firestore(); 
 const idProyecto = "espjaret";
 const mandar = firestore.collection("Nueva")
@@ -18,7 +23,7 @@ async function prueba() {
     console.log("No pues no")
   }
 }
-/*function prueba(){
+function prueba(){
     console.log("Hola");
 db.collection("cities").doc("LA").set({
     name: "Los Angeles",
