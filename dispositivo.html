@@ -27,7 +27,8 @@
      }else{
          estado = "No"
      }
-        firebase.firestore().collection("historial").add({dispositivo: dispo,fecha: timestamp.now(), entrada: rango,salida: estado }).then((docRef) => {
+        let date = new Date()
+        firebase.firestore().collection("historial").add({dispositivo: dispo,fecha: date.toJSON(), entrada: rango,salida: estado }).then((docRef) => {
     console.log("Document written with ID: ", docRef.id);
 })
 .catch((error) => {
