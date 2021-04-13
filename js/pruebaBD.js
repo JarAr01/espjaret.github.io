@@ -2,7 +2,7 @@ import {
   getFirestore
 } from "./firebase.js";
 
-document.getElementbyId("btnPrueba").addEventListener("click", function(){
+document.getElementById("btnPrueba").addEventListener("click", function(){
 firebase.firestore().collection("Nueva").doc("dos").set({nombre: "Hola 2"})
 });
 
