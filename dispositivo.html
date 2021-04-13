@@ -36,15 +36,15 @@ button :hover{
     <center>
         <a href="index.html"><button  type="button" style="width: 100%; background-color: #ffd194;" class="btn btn-block">Ver movil</button></a>
         <br><br>
-        <form id="send">
+        <form id="send" >
         <h2>Dispositivo:</h2>
         <output id="dispositivo"></output>
         <br><br>
         <label for="disabledRange" class="form-label">Entrada</label>
-        <input type="range" class="form-range" id="entrada" value="0" min="0" max="10">
+        <input type="range" class="form-range" id="entrada" value="0" min="0" max="10" onChange="captura()">
         <br><br>
         <div class="form-check">
-          <input class="form-check-input" type="checkbox" value="" id="sondea">
+          <input class="form-check-input" type="checkbox" value="" id="sondea" onChange="captura()">
           <label class="form-check-label" for="flexCheckDefault">
             Sondea Salida
           </label>
@@ -65,11 +65,11 @@ button :hover{
 <script src="js/barraInferior.js" type="module"></script>
 <script src="js/ctrlMovil.js" type="module"></script>
 <script src="js/firebase.js" type="module">
-    document.getElementById("send").addEventListener("change", captura())
+   const send = document.querySelector("send"); 
     function captura(){
-    const rango = document.getElementById("entrada").value;
-    const check = document.getElementById("entrada").value;
-        console.log(rango + "\n" + check)
+    const rango = send['entrada'].value;
+    //check = document.getElementById("entrada").value;
+        console.log(rango + "\n" )
     }
     </script>
 </html>
