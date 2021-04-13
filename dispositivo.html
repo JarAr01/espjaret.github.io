@@ -14,10 +14,15 @@
 <style>
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css");
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-button :hover{
-    background-color: white;
-  }
 </style>
+    <script>
+   const send = document.querySelector("send"); 
+    function captura(){
+    const rango = send['entrada'].value;
+    //check = document.getElementById("entrada").value;
+        console.log(rango + "\n" )
+        document.querySelector("#s").innerHTML = rango;
+    }</script>
 </head>
 <body>
     <nav class="navbar navbar-light" style="background: #70e1f5;  /* fallback for old browsers */
@@ -51,7 +56,7 @@ button :hover{
         </div>
             </form>
         <br><br>
-
+<output id="s"></output>
 
 
     </center>
@@ -64,12 +69,5 @@ button :hover{
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 <script src="js/barraInferior.js" type="module"></script>
 <script src="js/ctrlMovil.js" type="module"></script>
-<script src="js/firebase.js" type="module">
-   const send = document.querySelector("send"); 
-    function captura(){
-    const rango = send['entrada'].value;
-    //check = document.getElementById("entrada").value;
-        console.log(rango + "\n" )
-    }
-    </script>
+<script src="js/firebase.js" type="module"></script>
 </html>
