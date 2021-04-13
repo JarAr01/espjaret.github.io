@@ -50,6 +50,7 @@ button :hover{
     firebase.firestore().collection("historial").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         console.log(`<td>${doc.id}</td><td>${doc.data().dispositivo}</td><td>${doc.data().fecha}</td>`);
+ document.getElementById("historial").innerHTML += `<td>${doc.id}</td><td>${doc.data().dispositivo}</td><td>${doc.data().fecha}</td>`;
     });});
     </script>
 </html>
