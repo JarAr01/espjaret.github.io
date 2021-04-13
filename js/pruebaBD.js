@@ -1,4 +1,6 @@
 const db = firebase.firestore(); 
+const idProyecto = "espjaret";
+
 
 const boton = document.getElementById("btnPrueba");
 boton.addEventListener("click",prueba());
