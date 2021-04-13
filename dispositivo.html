@@ -16,9 +16,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
 </style>
     <script>
-   const send = document.querySelector("#send"); 
+   let send = document.querySelector("#send"); 
     function captura(){
-    const rango = send['entrada'].value;
+    let rango = send['entrada'].value;
     //check = document.getElementById("entrada").value;
         console.log(rango + "\n" )
         document.querySelector("#s").innerHTML = rango;
