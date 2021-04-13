@@ -39,6 +39,7 @@ button :hover{
       <th scope="col">ID</th>
       <th scope="col">Dispositivo</th>
       <th scope="col">Fecha</th>
+      <th scope="col">Valor</th>
     </tr>
   </thead>
   <tbody id="historial">         
@@ -47,6 +48,7 @@ button :hover{
     </center>
     </div>
 <footer>
+    <button class="btn btn-success" onClick="verHistorial()">Ver historial</button>
   <nav-inf></nav-inf>
 </footer>
 </body>
@@ -56,13 +58,13 @@ button :hover{
 <script src="js/firebase.js" type="module"></script>
     <script>
         
-    async function verHistorial(){
+   function verHistorial(){
         firebase.firestore().collection("historial").get().then((querySnapshot) => {
     querySnapshot.forEach(doc => {
         //console.log(`<td>${doc.id}</td><td>${doc.data().dispositivo}</td><td>${doc.data().fecha}</td>`);
-document.getElementById("historial").innerHTML += `<tr><td>${doc.id}</td><td>${doc.data().dispositivo}</td><td>${doc.data().fecha.toString()}</td></tr>`;
-    });});}
+document.getElementById("historial").innerHTML += `<tr><td>${doc.id}</td><td>${doc.data().dispositivo}</td><td>${doc.data().fecha.toString()}</td><td>${doc.data().entrada}</td></tr>`;
+    });});} 
         
-       setTimeout(verHistorial(),5000); 
+        
     </script>
 </html>
