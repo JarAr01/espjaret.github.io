@@ -1,4 +1,7 @@
-firestore.collection("cities").doc("LA").set({
+const db = firebase.firestore();
+const boton = document.getElementById("btnPrueba");
+boton.addEventListenner(click,function{
+db.collection("cities").doc("LA").set({
     name: "Los Angeles",
     state: "CA",
     country: "USA"
@@ -8,4 +11,5 @@ firestore.collection("cities").doc("LA").set({
 })
 .catch((error) => {
     console.error("Error writing document: ", error);
+});
 });
