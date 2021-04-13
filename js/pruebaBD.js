@@ -1,4 +1,4 @@
-db.collection("cities").doc("LA").set({
+firestore.collection("cities").doc("LA").set({
     name: "Los Angeles",
     state: "CA",
     country: "USA"
