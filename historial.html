@@ -34,8 +34,20 @@ button :hover{
 <h2>Historial</h2>
 <hr>
 <br><br>
+          <div>
+              <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Dispositivo</th>
+      <th scope="col">Fecha</th>
+    </tr>
+  </thead>
+  <tbody>
           <div id="historial"></div>
-          
+  </tbody>
+</table>
+          </div>
     </center>
     </div>
 <footer>
@@ -47,10 +59,13 @@ button :hover{
 <script src="js/barraInferior.js" type="module"></script>
 <script src="js/firebase.js" type="module"></script>
     <script>
-    firebase.firestore().collection("historial").get().then((querySnapshot) => {
+        
+    async function verHistorial(){await firebase.firestore().collection("historial").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-        //console.log(`<td>${doc.id}</td><td>${doc.data().dispositivo}</td><td>${doc.data().fecha}</td>`);
- document.getElementById("historial").innerHTML += `<td>${doc.id}</td><td>${doc.data().dispositivo}</td><td>${doc.data().fecha}</td>`;
-    });});
+        //console.log(`<tr><td>${doc.id}</td><td>${doc.data().dispositivo}</td><td>${doc.data().fecha}</td></tr>`);
+ document.getElementById("historial").innerHTML += `<tr><td>${doc.id}</td><td>${doc.data().dispositivo}</td><td>${doc.data().fecha}</td></tr>`;
+    });});}
+        
+        verHistorial();
     </script>
 </html>
