@@ -20,10 +20,16 @@
     function captura(){
         let send = document.querySelector("form");
     let rango = send['entrada'].value;
-    let check = document.getElementById("sondea").value;
-        console.log(rango + "\n"+ check)
+    let check = document.getElementById("sondea");
+     let estado = "";
+        if(check.checked){
+     estado = "Si"
+     }else{
+         estado = "No"
+     }
+        console.log(rango + "\n"+ estado)
         
-        document.querySelector("#s").innerHTML = rango;
+        document.querySelector("#s").innerHTML = rango + "<br>" + estado;
     }</script>
 </head>
 <body>
