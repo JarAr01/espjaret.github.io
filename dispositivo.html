@@ -36,6 +36,7 @@ button :hover{
     <center>
         <a href="index.html"><button  type="button" style="width: 100%; background-color: #ffd194;" class="btn btn-block">Ver movil</button></a>
         <br><br>
+        <form id="send">
         <h2>Dispositivo:</h2>
         <output id="dispositivo"></output>
         <br><br>
@@ -48,6 +49,7 @@ button :hover{
             Sondea Salida
           </label>
         </div>
+            </form>
         <br><br>
 
 
@@ -62,5 +64,12 @@ button :hover{
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js" integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf" crossorigin="anonymous"></script>
 <script src="js/barraInferior.js" type="module"></script>
 <script src="js/ctrlMovil.js" type="module"></script>
-<script src="js/firebase.js" type="module"></script>
+<script src="js/firebase.js" type="module">
+    document.getElementById("send").addEventListener("change", captura())
+    function captura(){
+    const rango = document.getElementById("entrada").value;
+    const check = document.getElementById("entrada").value;
+        console.log(rango + "\n" + check)
+    }
+    </script>
 </html>
