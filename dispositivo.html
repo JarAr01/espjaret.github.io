@@ -27,6 +27,11 @@
      }else{
          estado = "No"
      }
+        firebase.firestore().collection("historial").add({dispositivo: disp,fecha: timestamp.now(), entrada: rango,salida: estado }).then((docRef) => {
+    console.log("Document written with ID: ", docRef.id);
+})
+.catch((error) => {
+    console.error("Error adding document: ", error);
         console.log(rango + "\n"+ estado)
         
         document.querySelector("#s").innerHTML = rango + "<br>" + estado;
