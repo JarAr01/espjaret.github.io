@@ -1,10 +1,24 @@
+import {
+  getFirestore
+} from "./firebase.js";
+const firestore = getFirestore();
 const db = firebase.firestore(); 
 const idProyecto = "espjaret";
+const mandar = firestore.collection("Nueva")
 
 
 const boton = document.getElementById("btnPrueba");
 boton.addEventListener("click",prueba());
-function prueba(){
+async function prueba() {
+  try {
+    await mandar.
+      doc(dispositivoId).
+      set("Hola");
+  } catch (e) {
+    muestraError(e);
+  }
+}
+/*function prueba(){
     console.log("Hola");
 db.collection("cities").doc("LA").set({
     name: "Los Angeles",
@@ -17,4 +31,4 @@ db.collection("cities").doc("LA").set({
 .catch((error) => {
     console.error("Error writing document: ", error);
 });
-}
+}*/
