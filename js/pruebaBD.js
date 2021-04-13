@@ -3,7 +3,7 @@ import {
 } from "./firebase.js";
 
 document.getElementById("btnPrueba").addEventListener("click", function(){
-firebase.firestore().collection("Nueva").doc("dos").set({nombre: "Hola 2"})
+firebase.firestore().collection("Nueva").add({nombre: "Hola "+ Math.random()})
 });
 
 /*const firestore = getFirestore();
