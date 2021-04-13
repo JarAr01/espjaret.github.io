@@ -3,7 +3,13 @@ import {
 } from "./firebase.js";
 
 document.getElementById("btnPrueba").addEventListener("click", function(){
-firebase.firestore().collection("Nueva").add({nombre: "Hola "+ Math.random()})
+firebase.firestore().collection("Nueva").add({nombre: "Hola "+ Math.random()}).then((docRef) => {
+    console.log("Document written with ID: ", docRef.id);
+})
+.catch((error) => {
+    console.error("Error adding document: ", error);
+});
+
 });
 
 /*const firestore = getFirestore();
