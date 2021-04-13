@@ -15,7 +15,7 @@ async function prueba() {
       doc(dispositivoId).
       set("Hola");
   } catch (e) {
-    muestraError(e);
+    console.log("No pues no")
   }
 }
 /*function prueba(){
