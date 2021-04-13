@@ -47,6 +47,9 @@ button :hover{
 <script src="js/barraInferior.js" type="module"></script>
 <script src="js/firebase.js" type="module"></script>
     <script>
+        import {
+  getFirestore
+} from "./js/firebase.js";
     firebase.firestore().collection("historial").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
         console.log(`<td>${doc.id}</td><td>${doc.data().dispositivo}</td><td>${doc.data().fecha}</td>`);
