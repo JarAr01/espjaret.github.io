@@ -17,7 +17,6 @@
 </style>
     <script>
     const dispo = prompt("Ingresa el nombre que le asignas a tu dispositivo simulado","Dispositivo IoT1")
-    document.querySelector("#dispositivo").innerHTML = dispo;
     function captura(){
         let send = document.querySelector("form");
     let rango = send['entrada'].value;
@@ -37,6 +36,7 @@
         console.log(rango + "\n"+ estado)
         
         document.querySelector("#s").innerHTML = "Estado actual de la salida (Si: Activo, No: Inactivo):<br> " + estado;
+        document.querySelector("#dispositivo").innerHTML = dispo;
     }</script>
 </head>
 <body>
