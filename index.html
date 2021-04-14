@@ -95,7 +95,7 @@ firebase.firestore().collection("historial").orderBy("fecha","asc").get().then((
     
     setTimeout(firestore,1000)
 function actualizaSalida(){
-    document.querySelector("#range").innerHTML= `<input  type="range" class="form-range" class="range" id="disabledRange" disabled value="${num}">`;
+    document.querySelector("#range").innerHTML= `<meter class="form-range" class="range" id="disabledRange" disabled value="${num}">`;
     document.querySelector("#dispositivo").innerHTML= dispo;
     if(check === "Si"){
     document.querySelector("#check").innerHTML= `<input class="form-check-input" type="checkbox" checked id="flexCheckDefault">`;
