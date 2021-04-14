@@ -90,7 +90,7 @@ firebase.firestore().collection("historial").orderBy("fecha","asc").get().then((
     querySnapshot.forEach((doc) => {
        num = doc.data().entrada;
        check = doc.data().salida; 
-       disp = doc.data().dispositivo;
+       dispo = doc.data().dispositivo;
     });}); }
     
     setTimeout(firestore,1000)
