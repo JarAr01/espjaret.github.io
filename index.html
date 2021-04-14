@@ -79,7 +79,7 @@ firebase.firestore().collection("historial").orderBy("fecha","asc").get().then((
        dispo = doc.data().dispositivo;
     });}); }
     
-    setTimeout(firestore,100)
+    setTimeout(firestore,500)
 function actualizaSalida(){
     document.querySelector("#range").innerHTML= `<meter id="disabledRange" max="100" style="width:100%" value="${num}">`;
     document.querySelector("#dispositivo").innerHTML= dispo;
@@ -89,7 +89,7 @@ function actualizaSalida(){
     document.querySelector("#check").innerHTML= `<input class="form-check-input" type="checkbox" id="flexCheckDefault">`;
     }
 }
-     setTimeout(actualizaSalida,500)
+     setTimeout(actualizaSalida,1000)
 </script>
 </html>
 
