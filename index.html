@@ -98,9 +98,11 @@ function actualizaSalida(){
     document.querySelector("#range").innerHTML= `<input  type="range" class="form-range" class="range" id="disabledRange" disabled value="${num}">`;
     if(check === "Si"){
     document.querySelector("#check").innerHTML= `<input class="form-check-input" type="checkbox" checked id="flexCheckDefault">`;
+    }else{
+    document.querySelector("#check").innerHTML= `<input class="form-check-input" type="checkbox" id="flexCheckDefault">`;
     }
 }
-     setTimeout(actualizaSalida,2000)
+     setTimeout(actualizaSalida,3000)
 </script>
 </html>
 
