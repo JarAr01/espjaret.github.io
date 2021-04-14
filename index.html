@@ -89,18 +89,18 @@ var check;
     function firestore(){
 firebase.firestore().collection("historial").orderBy("fecha","asc").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
-       num= doc.data().entrada;
-       num= doc.data().salida; 
+       num = doc.data().entrada;
+       check = doc.data().salida; 
     });}); }
     
-    firestore();
+    setTimeout(firestore,1000)
 function actualizaSalida(){
     document.querySelector("#range").innerHTML= `<input  type="range" class="form-range" class="range" id="disabledRange" disabled value="${num}">`;
     if(check === "Si"){
     document.querySelector("#check").innerHTML= `<input class="form-check-input" type="checkbox" checked id="flexCheckDefault">`;
     }
 }
-    actualizaSalida();
+     setTimeout(actualizaSalida,2000)
 </script>
 </html>
 
