@@ -14,9 +14,22 @@
 <style>
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css");
 @import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
-button :hover{
-    background-color: white;
-  }
+
+    .range::-moz-range-thumb {
+width: 25px;
+height: 25px;
+background-color: #ff0000;
+border-radius: 50%;
+border: 0;
+}
+    .range{
+height: 20px;
+width: 100%;
+background-color: #f1f1f1;
+border-radius: 50px;
+-webkit-appearance: none;
+}
+    
 </style>
 </head>
 <body>
@@ -73,18 +86,21 @@ button :hover{
 <script>
 var num;
 var check;
+    function firestore(){
 firebase.firestore().collection("historial").orderBy("fecha","asc").get().then((querySnapshot) => {
     querySnapshot.forEach((doc) => {
        num= doc.data().entrada;
        num= doc.data().salida; 
-    });}); 
+    });}); }
+    
+    firestore();
 function actualizaSalida(){
-    document.querySelector("#range").innerHTML= `<input  type="range" class="form-range" id="disabledRange" disabled value="${num}">`;
+    document.querySelector("#range").innerHTML= `<input  type="range" class="form-range" class="range" id="disabledRange" disabled value="${num}">`;
     if(check === "Si"){
-    document.querySelector("#check").innerHTML= `<input class="form-check-input" type="checkbox" value="checked" id="flexCheckDefault">`;
+    document.querySelector("#check").innerHTML= `<input class="form-check-input" type="checkbox" checked id="flexCheckDefault">`;
     }
 }
-    actualizaSalida()
+    actualizaSalida();
 </script>
 </html>
 
