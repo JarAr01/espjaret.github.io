@@ -44,10 +44,12 @@ button :hover{
         <output id="dispositivo"></output>
         <br><br>
         <label for="disabledRange" class="form-label">Entrada</label>
-        <input type="range" class="form-range" id="disabledRange" disabled>
+        <!--<input type="range" class="form-range" id="disabledRange" disabled>-->
+        <br><output style="width:100%;" id="range"></output>
         <br><br>
         <div class="form-check" id="chk">
-          <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+          <!--<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">-->
+             <br><output id="check"></output>
           <label class="form-check-label" for="flexCheckDefault">
             Salida
           </label>
@@ -69,11 +71,20 @@ button :hover{
 <script src="js/ctrlMovil.js" type="module"></script>
 <script src="js/firebase.js" type="module"></script>
 <script>
-firebase.firestore().collection("historial").get().orderBy("fecha","asc").limitToFirst(1).then((querySnapshot) => {
-    querySnapshot.forEach(doc => {
-        //console.log(`<td>${doc.id}</td><td>${doc.data().dispositivo}</td><td>${doc.data().fecha}</td>`);
-document.getElementById("pr").innerHTML += `<input  type="range" class="form-range" id="disabledRange" disabled value="${doc.data().entrada}"`;
-    });});    
+var num;
+var check;
+firebase.firestore().collection("historial").orderBy("fecha","asc").get().then((querySnapshot) => {
+    querySnapshot.forEach((doc) => {
+       num= doc.data().entrada;
+       num= doc.data().salida; 
+    });}); 
+function actualizaSalida(){
+    document.querySelector("#range").innerHTML= `<input  type="range" class="form-range" id="disabledRange" disabled value="${num}">`;
+    if(check === "Si"){
+    document.querySelector("#check").innerHTML= `<input class="form-check-input" type="checkbox" value="checked" id="flexCheckDefault">`;
+    }
+}
+    actualizaSalida()
 </script>
 </html>
 
